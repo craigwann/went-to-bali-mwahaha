@@ -2,23 +2,32 @@ User.destroy_all
 Product.destroy_all
 
 product_list = [
-  ["blue man", "Illustration", "https://i.imgur.com/2q7koU5.jpg", "https://i.imgur.com/dqINJvm.jpg", "Created using Procreate app on iPad"],
-  ["PP Cluster bags", "Packaging", "https://i.imgur.com/wxVZq0E.jpg", "https://i.imgur.com/supvCxq.jpg", "Foil pouch packaging for pretzel clusters."],
-  ["Refocus", "Packaging", "https://i.imgur.com/tU8ogLl.jpg", "https://i.imgur.com/Y5vw7uu.jpg", "Six can designs for Refocus beverages."],
-  ["PP Cluster tubes", "Packaging", "https://i.imgur.com/fTZvyh7.jpg", "https://i.imgur.com/FMNw1a0.jpg", "Three designs for Pretzel Perfection"],
-  ["Motorola TalkAbout", "Ad", "https://i.imgur.com/li0MFn2.jpg", "https://i.imgur.com/w1sE6Ut.jpg", "Print ad for Motorola"],
-  ["Montanye Ranch", "Logo", "https://i.imgur.com/MaIUaNo.jpg", "https://i.imgur.com/oJeoXHt.jpg", "designs for marketing material"],
-  ["Hunting the West", "Magazine", "https://i.imgur.com/ocTk27w.jpg", "https://i.imgur.com/cg3bpNg.jpg", "Art Director for Hunting the West magazine"],
-  ["Dragon", "Illustration", "https://i.imgur.com/Yai58Vz.jpg", "https://i.imgur.com/F7OpLKU.jpg", "Created using Procreate app on iPad"],
-  ["Crowd", "Illustration", "https://i.imgur.com/SPniNrW.jpg", "https://i.imgur.com/7RjSxdV.jpg", "Created using Procreate app on iPad"],
-  ["Hillsboro Library", "Logo", "https://i.imgur.com/6RN5Omo.jpg", "https://i.imgur.com/oZYE3dX.jpg", "Design for Library Foundation of Hillsboro"],
-  ["Creepy Cat", "Illustration", "https://i.imgur.com/LHskiGN.jpg", "https://i.imgur.com/yaUEQNS.jpg", "Created using Procreate app on iPad"],
-  ["Product Illustrations", "Illustration", "https://i.imgur.com/LO5P6nX.jpg", "https://i.imgur.com/SrT6ZIB.jpg", "Illustrations for product manual"]
+  ["Wallet", "Travando’s Wallet offers 7 card pockets: 1 easy-access front pocket and 6 inner pockets. The slim wallet is ideal for carrying business cards, credit and debit cards, bills etc.", 27.99,  "https://i.imgur.com/2q7koU5.jpg"],
+  ["Smartwatch", "Samsung Gear S Smartwatch, White 4GB (AT&T)",299.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Sunglasses", "Bluetooth links, easy to operate, can receive wireless calls on the glasses. A sound passed through directly to the auditory nerve bones, will not cause damage to the ear canal and eardrum, to maximize the protection of hearing.",99.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Overwatch Action Figure", "Stylized collectable stands 6 inches tall, perfect for any Over watch fan!",19.55, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Game Console", "Built-in 168 classic games . It will take you back to your childhood",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  [" Walkie Talkies ", "One-to-one and one-to-more communication function allow more walkie talkie can communicate on same channel",14.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["name", "Creative and hot puzzle for enhancing assembly ability. Improve intelligence and imagination.",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Magnet Building Blocks", "description",17.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Slime", "Your order includes a dozen of glow in the dark slime, in 4 different neon colors.",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Spiral Liquid Bubbler Timer ", "Our crystal clear sensory liquid bubblers consists of colorful mineral oil and water. When turned upside down the bubbly droplets ‘spiral down’ to the bottom.",8.87, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Dinosaurs ", "description",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["name", "12 Boxed Sizeable 7” dinosaurs Includes Book with history of each dinosaur will inspire imaginative play and curiosity about science.",8.53, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["MegaScope", "Be the neighborhoods intelligence agent with this exclusive periscope and megaphone combination",38.79, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Magic 8 Ball", "The original Magic 8 Ball novelty toy has all the answers to your deepest questions!",8.50, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Etch A Sketch", "Left knob draws left and right; right knob draws up and down. Turn both knobs together for angles and curves!",9.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Slinky", "Stretches like an accordion, bounces and walks down steps",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["Glo-Gloves", "These LED Light Up Gloves are made from soft cotton which is very comfortable to wear even for a long time.",12.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["name", "description",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["name", "description",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+  ["name", "description",19.99, "https://i.imgur.com/wxVZq0E.jpg"],
+
 ]
 
 
-product_list.each do |projname, cat, imgurl, imgurlsm, desc|
-  Product.create( name: projname, description: cat, image: imgurl, price: imgurlsm, description: desc )
+product_list.each do |productname, desc, cost, imgurl|
+  Product.create( name: productname, description: desc, price: cost, image: imgurl )
 end
 
 user_list = [
