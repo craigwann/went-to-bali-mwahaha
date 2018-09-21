@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :admin
   helper_method :current_order
+  helper_method :cart_qty
+
+  def cart_qty
+    item_quantity = current_order.order_items.length
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
