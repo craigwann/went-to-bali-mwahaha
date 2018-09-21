@@ -27,7 +27,7 @@
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, id: "flash_#{name}" %>
     <% end %>
-    <h6><%= link_to "Cart | Total items: ", cart_path %> <span id="cart-quantity"><%= cart_qty %> </span></h6>
+    <h6><%= link_to "Cart | Total items: ", cart_path %> <span id="cart-number"><%= cart_qty %> </span></h6>
 
     <div class="container">
       <%= yield %>

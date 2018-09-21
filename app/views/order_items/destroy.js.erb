@@ -1,0 +1,4 @@
+$('#item<%=@item.id%>_remove').remove()
+$('.price-container').text('Your Total: <%= j render("totalprice") %>')
+$('#cart-number').text('<%= cart_qty %>')
+$('#cart-quantity').text('<%= cart_qty %>')
