@@ -1,3 +1,6 @@
+User.destroy_all
+Product.destroy_all
+
 product_list = [
   ["blue man", "Illustration", "https://i.imgur.com/2q7koU5.jpg", "https://i.imgur.com/dqINJvm.jpg", "Created using Procreate app on iPad"],
   ["PP Cluster bags", "Packaging", "https://i.imgur.com/wxVZq0E.jpg", "https://i.imgur.com/supvCxq.jpg", "Foil pouch packaging for pretzel clusters."],
@@ -15,13 +18,16 @@ product_list = [
 
 
 product_list.each do |projname, cat, imgurl, imgurlsm, desc|
-  Project.create( name: projname, description: cat, image: imgurl, price: imgurlsm, description: desc )
+  Product.create( name: projname, description: cat, image: imgurl, price: imgurlsm, description: desc )
 end
 
 user_list = [
   [ "admin@admin.com", "password", true ],
-  [ "user@user.com", "password", false ],  
+  [ "user@user.com", "password", false ],
 ]
 user_list.each do |usr_email, pswrd, role|
   User.create!( email: usr_email, password: pswrd, admin: role )
 end
+
+p "Created #{Product.count} products"
+p "Created #{User.count} users"
