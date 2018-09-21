@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :admin
   helper_method :current_order
   helper_method :cart_qty
+  helper_method :current_product
 
   def cart_qty
     item_quantity = current_order.order_items.length
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
 
   def admin
     current_user && current_user.admin
+  end
+
+  def current_product
+    session[:product_id] ? Product.find(session[:product_id]) : Product.new
   end
 
   def current_order

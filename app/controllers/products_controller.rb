@@ -4,10 +4,14 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
+    @selected_product = current_product
   end
 
   def show
     @product = Product.find(params[:id])
+    respond_to do |format|
+      format.js {render layout: false}
+    end
   end
 
   def new
