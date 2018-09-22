@@ -1,22 +1,36 @@
 <h3>Products</h3>
-<div class="row">
+<div class="notrow">
   <div class="section">
-  <% @products.each do |product| %>
-    <div class="col s4">
-      <h4><%= link_to product.name, product_path(product), id: "product_details_link", remote: true %></h4>
-      <p><%= product.description %></p>
-      <p><%= number_to_currency product.price %></p>
-      <%= link_to 'Details', product_path(product), remote: true %>
-        <div id="product<%=product.id%>_details" style='display:none;'>
-          <p><%= product.description %></p>
+    <% @products.each do |product| %>
+      <div class="card">
+        <div class="card-content">
+          <%= link_to 'Details (hide/show)', product_path(product), remote: true %>
+          <div id="product<%=product.id%>_details" style='display:none;'>
+            <%= image_tag product.image %>
+            <p><%= product.description %></p>
+          </div>
+          <span class="card-title"><h4><%= link_to product.name, product_path(product), id: "product_details_link", remote: true %></h4></span>
+          <p><%= number_to_currency product.price %></p>
+
+            <div class="card-action">
+              <%= form_for @order_item, remote: true do |f| %>
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.number_field :quantity, min: 1, placeholder: "Enter order quantity here" %>
+              <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
+            <% end %>
+            </div>
         </div>
 
-      <%= form_for @order_item, remote: true do |f| %>
-        <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.number_field :quantity, min: 1, placeholder: "Oops, breaks if you don't add input!" %>
-        <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
-      <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+<div class="card-content">
+  <span class="card-title">Card Title</span>
+  <p>I am a very simple card. I am good at containing small bits of information.
+  I am convenient because I require little markup to use effectively.</p>
+</div>
+<div class="card-action">
+  <a href="#">This is a link</a>
+  <a href="#">This is a link</a>
 </div>
