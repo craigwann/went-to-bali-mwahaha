@@ -4,9 +4,12 @@ E-commerce site. Uses `bcrypt` and `materialize`. There's a seed file. Set up yo
 
 To set up:
 
-* `rake db:setup`
-
-* Sorry, didn't get around to tests. It mostly works. There might be a few bugs.
+#### Installation
+1. Download github repository from
+`git clone https://github.com/craigwann/portfolio-rails.git`
+1. Ruby version 2.5.0 Rails version 5.2.1
+1. navigate to project directory `bundle install` and `rake db:setup`
+1. There is an admin user with the email `admin@admin.com` and regular user with the email the email `user@user.com`. Both accounts have the  password= `password`
 
 ### AJAX
 Before you do any other refactoring, you'll need to add the following AJAX to the site. Make sure to commit after each new feature:
