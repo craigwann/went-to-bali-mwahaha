@@ -22,13 +22,10 @@ Before you do any other refactoring, you'll need to add the following AJAX to th
 Once you are finished adding AJAX, continue to refactor the site. Do at least 6 of the following items. Commit after each completed objective and also mention them in your README. Make sure you test where appropriate.
 
 * Ensure that users can't order a negative number of items.
-* Add flash messages for signing up, signing in and signing out.
 * Add product update and delete functionality for admins.
 * Add admin flash messages for adding, updating and deleting products.
 * Allow other than whole dollar amounts for admin product creation (for instance, 3.99).
 * Add product validations.
-* Add password validations to ensure a user's password is sufficiently complex.
-* Add admin links to navbar so admins can easily add, update and delete products.
-* Fix the row height for products, which can quickly become uneven.
-* Add integration testing for AJAX functionality.
-* Add further AJAX functionality where it might be useful.
+* Add admin links to navbar so admins can easily add products.
+* Fix the row height for products, which can quickly become uneven by using `materialize` cards instead of rows and columns.
+
